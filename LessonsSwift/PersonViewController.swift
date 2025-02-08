@@ -37,7 +37,7 @@ class PersonViewController: UIViewController {
         return labelPersonAutorization
     }()
     // поле ввода логина
-    var textFieldLogin: UITextField = {
+    var loginTextField: UITextField = {
         let textFieldLog = UITextField()
         textFieldLog.translatesAutoresizingMaskIntoConstraints = false
         textFieldLog.placeholder = "Введите логин"
@@ -47,7 +47,7 @@ class PersonViewController: UIViewController {
         return textFieldLog
     }()
     // поле ввода пароля
-    var textFieldPassword: UITextField = {
+    var passwordTextField: UITextField = {
         let textFieldPass = UITextField()
         textFieldPass.translatesAutoresizingMaskIntoConstraints = false
         textFieldPass.placeholder = "Введите пароль"
@@ -58,7 +58,7 @@ class PersonViewController: UIViewController {
     }()
     // создаю метод отображения полей "Пароль" и "Логин"
     @objc func showInfo() {
-        if let login = textFieldLogin.text, !login.isEmpty, let password = textFieldPassword.text, !password.isEmpty {
+        if let login = loginTextField.text, !login.isEmpty, let password = passwordTextField.text, !password.isEmpty {
             personAutoruzationLabel.text = "Логин: \(login)\nПароль:\(password)"
         } else {
             personAutoruzationLabel.text = "введите логин и пароль"
@@ -95,9 +95,8 @@ class PersonViewController: UIViewController {
 extension PersonViewController {
     // метод добавления view на экран
     func addView() {
-        view.addSubview(textFieldLogin)
-        view.addSubview(textFieldLogin)
-        view.addSubview(textFieldPassword)
+        view.addSubview(loginTextField)
+        view.addSubview(passwordTextField)
         view.addSubview(personAutoruzationLabel)
         view.addSubview(buttonAutorization)
         view.addSubview(personNameLabel)
@@ -119,23 +118,23 @@ extension PersonViewController {
     // метод констрейта textFieldLogin
     func addTextFieldLoginConstraints() {
         NSLayoutConstraint.activate([
-            textFieldLogin.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldLogin.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            textFieldLogin.widthAnchor.constraint(equalToConstant: 250)
+            loginTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            loginTextField.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
     // метод констрейта textFieldPassword
     func addTextFieldPasswordConstraints() {
         NSLayoutConstraint.activate([
-            textFieldPassword.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldPassword.topAnchor.constraint(equalTo: textFieldLogin.bottomAnchor, constant: 20),
-            textFieldPassword.widthAnchor.constraint(equalToConstant: 250)
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 20),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
     // метод констрейта personAutoruzationLabel
     func addPersonAutoruzationLabelConstraints() {
         NSLayoutConstraint.activate([
-            personAutoruzationLabel.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor, constant: 20),
+            personAutoruzationLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             personAutoruzationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30 ),
             personAutoruzationLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
