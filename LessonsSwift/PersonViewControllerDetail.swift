@@ -5,10 +5,9 @@
 //  Created by Альберт Бахитов on 10.02.2025.
 //
 
-import Foundation
 import UIKit
 
-class PersonViewControllerDetail: UIViewController {
+class PersonViewDetailController: UIViewController {
     // объявляю переменную personFullNameLabel, которая содержит UILabel
     var personFullNameLabel: UILabel = {
         // создаю экзепляр UILabel
@@ -60,4 +59,8 @@ class PersonViewControllerDetail: UIViewController {
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
+    
+    override func viewDidLoad() {
+    
+    }
 }
