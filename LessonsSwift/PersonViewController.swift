@@ -65,7 +65,7 @@ class PersonViewController: UIViewController {
         }
     }
     // создаю константу с моделью данных
-    let person1 = PersonModel(name: "Albert", lastName: "Bakhitov", age: 28, personType: .qa)
+    var person1 = PersonModel(name: "Albert", lastName: "Bakhitov", age: 28, personType: .qa)
     // создаем кнопку авторизации
     var buttonAutorization: UIButton = {
         // инициализация кнопки buttonAutorization
@@ -81,6 +81,17 @@ class PersonViewController: UIViewController {
         personLastNameLabel.text = "Фамилия: \(person1.lastName)"
         personAgeLabel.text = "Возраст: \(person1.age)"
         personTypeLabel.text = "Специальность: \(person1.personType)"
+    }
+    // метод перехода на 2 контроллер
+    @objc func openPersonViewControllerDetail() {
+        let personViewControllerDetail = PersonViewDetailController()
+        personViewControllerDetail.person = person1
+        personViewControllerDetail.modalPresentationStyle = .fullScreen
+        personViewControllerDetail.onAgeUpdated = { [weak self] newAge in
+            self?.person1.age = newAge
+            self?.displayTextLabels()
+        }
+        present(personViewControllerDetail, animated: true)
     }
     
     override func viewDidLoad() {

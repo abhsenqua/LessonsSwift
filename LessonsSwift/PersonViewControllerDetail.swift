@@ -8,6 +8,12 @@
 import UIKit
 
 class PersonViewDetailController: UIViewController {
+    
+    // переменная для хранения информации о Person, переданной из 1 контроллера
+    var person: PersonModel?
+    // Замыкание для обновления возраста
+    var onAgeUpdated: ((Int) -> Void)?
+    
     // объявляю переменную personFullNameLabel, которая содержит UILabel
     var personFullNameLabel: UILabel = {
         // создаю экзепляр UILabel
@@ -61,6 +67,20 @@ class PersonViewDetailController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
     
     }
+    
+   
+    
+    // метод обновления текстовых полей для 2 контроллера
+    func updateUI() {
+        guard let person = person else { return }
+        personFullNameLabel.text = "ФИО: \(person.name) \(person.lastName)"
+        personAgeLabel.text = "Возраст: \(person.age)"
+        personExpirienceWorTextView.text = "Опыт работы: 1 год"
+        personAvatarImageView.image = UIImage(named: "avatar")
+    }
+    
+    
 }
