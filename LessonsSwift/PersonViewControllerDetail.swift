@@ -11,8 +11,16 @@ class PersonViewDetailController: UIViewController {
     
     // переменная для хранения информации о Person, переданной из 1 контроллера
     var person: PersonModel?
-    // Замыкание для обновления возраста
-    var onAgeUpdated: ((Int) -> Void)?
+    
+    // init для передачи данных о Person
+    init(Person: PersonModel) {
+        self.person = Person
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // объявляю переменную personFullNameLabel, которая содержит UILabel
     var personFullNameLabel: UILabel = {
@@ -25,7 +33,6 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UILabel
         return labelPersonFullName
     }()
-    
     // объявляю переменную personAgeLabel, которая содержит UILabel
     var personAgeLabel: UILabel = {
         // создаю экземпляр UILabel
@@ -37,7 +44,6 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UILabel
         return labelPersonAge
     }()
-    
     // объявляю переменную personExpirienceWorTextView, которая содержит UITextView
     var personExpirienceWorTextView: UITextView = {
         // создаю экзепляр UITextView()
@@ -53,11 +59,12 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UITextView
         return textViewPersonExpirienceWork
     }()
-    
     // объявляю переменную personAvatarImageView, которая содержит ImageView
     var personAvatarImageView: UIImageView = {
-        // создаю экзепляр UIView
-        let imageViewPersonAvatar = UIImageView()
+        // передаю название аватарки
+        let image = UIImage(named: "avatar")
+        // создаю экзепляр UIView с аватаркой
+        let imageViewPersonAvatar = UIImageView(image: image)
         // задаю режим отображения изображения (сохранение границ)
         imageViewPersonAvatar.contentMode = .scaleAspectFill
         // отключаю автоматическое создание ограничений constrait
@@ -68,18 +75,14 @@ class PersonViewDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
     }
-    
-   
-    
     // метод обновления текстовых полей для 2 контроллера
     func updateUI() {
         guard let person = person else { return }
         personFullNameLabel.text = "ФИО: \(person.name) \(person.lastName)"
         personAgeLabel.text = "Возраст: \(person.age)"
         personExpirienceWorTextView.text = "Опыт работы: 1 год"
-        personAvatarImageView.image = UIImage(named: "avatar")
     }
     
     

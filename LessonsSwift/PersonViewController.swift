@@ -30,7 +30,7 @@ class PersonViewController: UIViewController {
         return labelPersonType
     }()
     // лейбл авторизации
-    var personAutoruzationLabel: UILabel = {
+    var personAuthorizationLabel: UILabel = {
         let labelPersonAutorization = UILabel()
         labelPersonAutorization.numberOfLines = 0
         labelPersonAutorization.translatesAutoresizingMaskIntoConstraints = false
@@ -59,38 +59,36 @@ class PersonViewController: UIViewController {
     // создаю метод отображения полей "Пароль" и "Логин"
     @objc func showInfo() {
         if !(loginTextField.text?.isEmpty ?? true) && !(passwordTextField.text?.isEmpty ?? true) {
-            personAutoruzationLabel.text = "Логин: \(loginTextField.text!)\nПароль: \(passwordTextField.text!)"
+            personAuthorizationLabel.text = "Логин: \(loginTextField.text!)\nПароль: \(passwordTextField.text!)"
         } else {
-            personAutoruzationLabel.text = "Введите логин и пароль"
+            personAuthorizationLabel.text = "Введите логин и пароль"
         }
     }
     // создаю константу с моделью данных
-    var person1 = PersonModel(name: "Albert", lastName: "Bakhitov", age: 28, personType: .qa)
+    var person = PersonModel(name: "Albert", lastName: "Bakhitov", age: 28, personType: .qa)
     // создаем кнопку авторизации
-    var buttonAutorization: UIButton = {
+    var buttonAuthorization: UIButton = {
         // инициализация кнопки buttonAutorization
         let buttonAuth = UIButton(type: .system)
         buttonAuth.translatesAutoresizingMaskIntoConstraints = false
-        buttonAuth.setTitle("Авторизация: ", for: .normal)
+        buttonAuth.setTitle("Авторизация", for: .normal)
         buttonAuth.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
         return buttonAuth
     }()
     // метод для добавления отображения текста в лейблах на экране
     func displayTextLabels() {
-        personNameLabel.text = "Имя: \(person1.name)"
-        personLastNameLabel.text = "Фамилия: \(person1.lastName)"
-        personAgeLabel.text = "Возраст: \(person1.age)"
-        personTypeLabel.text = "Специальность: \(person1.personType)"
+        personNameLabel.text = "Имя: \(person.name)"
+        personLastNameLabel.text = "Фамилия: \(person.lastName)"
+        personAgeLabel.text = "Возраст: \(person.age)"
+        personTypeLabel.text = "Специальность: \(person.personType)"
     }
     // метод перехода на 2 контроллер
     @objc func openPersonViewControllerDetail() {
-        let personViewControllerDetail = PersonViewDetailController()
-        personViewControllerDetail.person = person1
+        // объявляю константу моделью данных Person
+        let personViewControllerDetail = PersonViewDetailController(Person: person)
+        // задаю метод открытия экрана
         personViewControllerDetail.modalPresentationStyle = .fullScreen
-        personViewControllerDetail.onAgeUpdated = { [weak self] newAge in
-            self?.person1.age = newAge
-            self?.displayTextLabels()
-        }
+        // открываю 2 контроллер
         present(personViewControllerDetail, animated: true)
     }
     
@@ -108,8 +106,8 @@ extension PersonViewController {
     func addView() {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(personAutoruzationLabel)
-        view.addSubview(buttonAutorization)
+        view.addSubview(personAuthorizationLabel)
+        view.addSubview(buttonAuthorization)
         view.addSubview(personNameLabel)
         view.addSubview(personLastNameLabel)
         view.addSubview(personAgeLabel)
@@ -119,7 +117,7 @@ extension PersonViewController {
     func setupConstraints() {
         addLoginTextFieldConstrait()
         addPasswordTextFieldConstrait()
-        addAutoruzationLabelPersonConstraint()
+        addAuthorizationLabelPersonConstraint()
         addButtonAutorizationConstraint()
         addNameLabelPersonConstrait()
         addLastNameLabelPersonConstrait()
@@ -143,25 +141,25 @@ extension PersonViewController {
         ])
     }
     // метод констрейта personAutoruzationLabel
-    func addAutoruzationLabelPersonConstraint() {
+    func addAuthorizationLabelPersonConstraint() {
         NSLayoutConstraint.activate([
-            personAutoruzationLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            personAutoruzationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30 ),
-            personAutoruzationLabel.widthAnchor.constraint(equalToConstant: 250)
+            personAuthorizationLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            personAuthorizationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30 ),
+            personAuthorizationLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
     // метод констрейта buttonAutorization
     func addButtonAutorizationConstraint() {
         NSLayoutConstraint.activate([
-            buttonAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -75),
-            buttonAutorization.centerYAnchor.constraint(equalTo: personAutoruzationLabel.centerYAnchor),
+            buttonAuthorization.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -75),
+            buttonAuthorization.centerYAnchor.constraint(equalTo: personAuthorizationLabel.centerYAnchor),
         ])
     }
     // метод констрейта personNameLabel
     func addNameLabelPersonConstrait() {
         NSLayoutConstraint.activate([
             personNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            personNameLabel.bottomAnchor.constraint(equalTo: buttonAutorization.bottomAnchor, constant: 20),
+            personNameLabel.bottomAnchor.constraint(equalTo: buttonAuthorization.bottomAnchor, constant: 20),
             personNameLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
