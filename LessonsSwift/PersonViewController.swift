@@ -75,6 +75,14 @@ class PersonViewController: UIViewController {
         buttonAuth.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
         return buttonAuth
     }()
+    // кнопка для перехода на 2 контроллер
+    var buttonNextScreenPersonViewControllerDetail: UIButton = {
+        let buttonNextScreenPVCD = UIButton(type: .system)
+        buttonNextScreenPVCD.translatesAutoresizingMaskIntoConstraints = false
+        buttonNextScreenPVCD.setTitle("Открыть 2 контроллер", for: .normal)
+        buttonNextScreenPVCD.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
+        return buttonNextScreenPVCD
+    }()
     // метод для добавления отображения текста в лейблах на экране
     func displayTextLabels() {
         personNameLabel.text = "Имя: \(person.name)"
@@ -84,7 +92,7 @@ class PersonViewController: UIViewController {
     }
     // метод перехода на 2 контроллер
     @objc func openPersonViewControllerDetail() {
-        // объявляю константу моделью данных Person
+        // создаю экзепляр 2 контроллера передавая данные person
         let personViewControllerDetail = PersonViewDetailController(Person: person)
         // задаю метод открытия экрана
         personViewControllerDetail.modalPresentationStyle = .fullScreen
@@ -112,6 +120,7 @@ extension PersonViewController {
         view.addSubview(personLastNameLabel)
         view.addSubview(personAgeLabel)
         view.addSubview(personTypeLabel)
+        view.addSubview(buttonNextScreenPersonViewControllerDetail)
     }
     // метод вызова констрейтов
     func setupConstraints() {
@@ -123,6 +132,7 @@ extension PersonViewController {
         addLastNameLabelPersonConstrait()
         addAgeLabelPersonConstraint()
         addTypeLabelPersonConstrait()
+        addButtonNextScreenConstraint()
     }
     // метод констрейта textFieldLogin
     func addLoginTextFieldConstrait() {
@@ -185,6 +195,13 @@ extension PersonViewController {
             personTypeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             personTypeLabel.bottomAnchor.constraint(equalTo: personAgeLabel.bottomAnchor, constant: 20),
             personTypeLabel.widthAnchor.constraint(equalToConstant: 250)
+        ])
+    }
+    // метод констрейта addButtonNextScreenConstraint
+    func addButtonNextScreenConstraint() {
+        NSLayoutConstraint.activate([
+            buttonNextScreenPersonViewControllerDetail.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 20)
         ])
     }
 }
