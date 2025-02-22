@@ -19,7 +19,7 @@ class PersonViewDetailController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // объявляю переменную personFullNameLabel, которая содержит UILabel
+    // объявляю переменную personFullNameLabel
     var personFullNameLabel: UILabel = {
         // создаю экзепляр UILabel
         let labelPersonFullName = UILabel()
@@ -30,7 +30,7 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UILabel
         return labelPersonFullName
     }()
-    // объявляю переменную personAgeLabel, которая содержит UILabel
+    // объявляю переменную personAgeLabel
     var personAgeLabel: UILabel = {
         // создаю экземпляр UILabel
         let labelPersonAge = UILabel()
@@ -41,7 +41,7 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UILabel
         return labelPersonAge
     }()
-    // объявляю переменную personExpirienceWorTextView, которая содержит UITextView
+    // объявляю переменную personExpirienceWorTextView
     var personExperienceTextView: UITextView = {
         // создаю экзепляр UITextView()
         let textViewPersonExpirienceWork = UITextView()
@@ -56,7 +56,7 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UITextView
         return textViewPersonExpirienceWork
     }()
-    // объявляю переменную personAvatarImageView, которая содержит ImageView
+    // объявляю переменную personAvatarImageView
     var personAvatarImageView: UIImageView = {
         // передаю название аватарки
         let image = UIImage(named: "avatar")
@@ -69,6 +69,15 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
+    // объявляю переменную personBackButtonView
+    var buttonBackScreenPersonViewController: UIButton = {
+        let backButtonPersonView = UIButton(type: .system)
+        backButtonPersonView.translatesAutoresizingMaskIntoConstraints = false
+        backButtonPersonView.setTitle("Назад", for: .normal)
+        backButtonPersonView.addTarget(self, action: #selector(openPersonViewController), for:.touchUpInside)
+        return backButtonPersonView
+
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +85,7 @@ class PersonViewDetailController: UIViewController {
         view.addSubview(personAgeLabel)
         view.addSubview(personExperienceTextView)
         view.addSubview(personAvatarImageView)
+        view.addSubview(buttonBackScreenPersonViewController)
         view.backgroundColor = .white
         setupConstraints()
         
@@ -83,9 +93,16 @@ class PersonViewDetailController: UIViewController {
     // метод обновления текстовых полей для 2 контроллера
     func updateUI() {
         guard let person = person else { return }
-        personFullNameLabel.text = "ФИО: \(person.name) \(person.lastName)"
+        personFullNameLabel.text = "ФИО: \(person.lastName) \(person.name) \(person.sureName)"
         personAgeLabel.text = "Возраст: \(person.age)"
         personExperienceTextView.text = "Опыт работы: 1 год"
+    }
+    
+    // метод перехода со 2 контроллера на 1
+    @objc func openPersonViewController() {
+        let personViewController = PersonViewController()
+        personViewController.modalPresentationStyle = .formSheet
+        present(personViewController, animated: true)
     }
 }
 // расширение PersonViewDetailController
@@ -97,13 +114,14 @@ extension PersonViewDetailController {
         addExperienceTextViewConstraints()
         addAvatarImageViewConstraints()
         updateUI()
+        addButtonBackScreenPersonConstraint()
     }
     // констрейт для ФИО
     func addFullNameLabelConstraints() {
         NSLayoutConstraint.activate([
             personFullNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             personFullNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            personFullNameLabel.widthAnchor.constraint(equalToConstant: 250)
+            personFullNameLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
     // Констрейты для возраста
@@ -130,6 +148,13 @@ extension PersonViewDetailController {
             personAvatarImageView.topAnchor.constraint(equalTo:personExperienceTextView.bottomAnchor, constant: 20),
             personAvatarImageView.widthAnchor.constraint(equalToConstant: 100),
             personAvatarImageView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    
+    func addButtonBackScreenPersonConstraint() {
+        NSLayoutConstraint.activate([
+            buttonBackScreenPersonViewController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonBackScreenPersonViewController.bottomAnchor.constraint(equalTo: personAvatarImageView.bottomAnchor, constant: 20),
         ])
     }
 }
