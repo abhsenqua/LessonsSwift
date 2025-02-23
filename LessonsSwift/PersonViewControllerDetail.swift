@@ -69,23 +69,14 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
-    // объявляю переменную personBackButtonView
-    var buttonBackScreenPersonViewController: UIButton = {
-        let backButtonPersonView = UIButton(type: .system)
-        backButtonPersonView.translatesAutoresizingMaskIntoConstraints = false
-        backButtonPersonView.setTitle("Назад", for: .normal)
-        backButtonPersonView.addTarget(self, action: #selector(openPersonViewController), for:.touchUpInside)
-        return backButtonPersonView
-
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(personFullNameLabel)
         view.addSubview(personAgeLabel)
         view.addSubview(personExperienceTextView)
         view.addSubview(personAvatarImageView)
-        view.addSubview(buttonBackScreenPersonViewController)
         view.backgroundColor = .white
         setupConstraints()
         
@@ -99,10 +90,8 @@ class PersonViewDetailController: UIViewController {
     }
     
     // метод перехода со 2 контроллера на 1
-    @objc func openPersonViewController() {
-        let personViewController = PersonViewController()
-        personViewController.modalPresentationStyle = .formSheet
-        present(personViewController, animated: true)
+    @objc func closePersonViewControllerDetail() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 // расширение PersonViewDetailController
@@ -114,7 +103,6 @@ extension PersonViewDetailController {
         addExperienceTextViewConstraints()
         addAvatarImageViewConstraints()
         updateUI()
-        addButtonBackScreenPersonConstraint()
     }
     // констрейт для ФИО
     func addFullNameLabelConstraints() {
@@ -148,13 +136,6 @@ extension PersonViewDetailController {
             personAvatarImageView.topAnchor.constraint(equalTo:personExperienceTextView.bottomAnchor, constant: 20),
             personAvatarImageView.widthAnchor.constraint(equalToConstant: 100),
             personAvatarImageView.heightAnchor.constraint(equalToConstant: 100)
-        ])
-    }
-    
-    func addButtonBackScreenPersonConstraint() {
-        NSLayoutConstraint.activate([
-            buttonBackScreenPersonViewController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonBackScreenPersonViewController.bottomAnchor.constraint(equalTo: personAvatarImageView.bottomAnchor, constant: 20),
         ])
     }
 }

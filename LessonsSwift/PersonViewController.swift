@@ -105,7 +105,7 @@ class PersonViewController: UIViewController {
         // задаю метод открытия экрана
         personViewControllerDetail.modalPresentationStyle = .formSheet
         // открываю 2 контроллер
-        present(personViewControllerDetail, animated: true)
+        navigationController?.pushViewController(personViewControllerDetail, animated: true)
     }
     
     override func viewDidLoad() {
