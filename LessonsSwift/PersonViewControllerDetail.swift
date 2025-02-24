@@ -59,19 +59,24 @@ class PersonViewDetailController: UIViewController {
     // объявляю переменную personAvatarImageView
     var personAvatarImageView: UIImageView = {
         // передаю название аватарки
-        let image = UIImage(named: "avatar")
+        let image = UIImage(named: "image.jpeg")
         // создаю экзепляр UIView с аватаркой
         let imageViewPersonAvatar = UIImageView(image: image)
         // задаю режим отображения изображения (сохранение границ)
         imageViewPersonAvatar.contentMode = .scaleAspectFill
         // отключаю автоматическое создание ограничений constrait
         imageViewPersonAvatar.translatesAutoresizingMaskIntoConstraints = false
+        // устанавливаю радиус
+        imageViewPersonAvatar.layer.cornerRadius = 50
+        // устаналвлию загругление
+        imageViewPersonAvatar.clipsToBounds = true
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Контроллер 2"
         
         view.addSubview(personFullNameLabel)
         view.addSubview(personAgeLabel)
@@ -87,11 +92,6 @@ class PersonViewDetailController: UIViewController {
         personFullNameLabel.text = "ФИО: \(person.lastName) \(person.name) \(person.sureName)"
         personAgeLabel.text = "Возраст: \(person.age)"
         personExperienceTextView.text = "Опыт работы: 1 год"
-    }
-    
-    // метод перехода со 2 контроллера на 1
-    @objc func closePersonViewControllerDetail() {
-        self.navigationController?.popViewController(animated: true)
     }
 }
 // расширение PersonViewDetailController

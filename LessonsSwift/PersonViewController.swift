@@ -110,6 +110,8 @@ class PersonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Контроллер 1"
         self.view.backgroundColor = .white
         addView()
         setupConstraints()
