@@ -59,7 +59,7 @@ class PersonViewDetailController: UIViewController {
     // объявляю переменную personAvatarImageView
     var personAvatarImageView: UIImageView = {
         // передаю название аватарки
-        let image = UIImage(named: "image.jpeg")
+        let image = UIImage(named: "Image")
         // создаю экзепляр UIView с аватаркой
         let imageViewPersonAvatar = UIImageView(image: image)
         // задаю режим отображения изображения (сохранение границ)
@@ -68,23 +68,25 @@ class PersonViewDetailController: UIViewController {
         imageViewPersonAvatar.translatesAutoresizingMaskIntoConstraints = false
         // устанавливаю радиус
         imageViewPersonAvatar.layer.cornerRadius = 50
-        // устаналвлию загругление
+        // устаналвлию закругление
         imageViewPersonAvatar.clipsToBounds = true
+        // принимает размеры изображения
+        imageViewPersonAvatar.sizeToFit()
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Контроллер 2"
         
+        title = "Детальное описание карточки \(person!.name)"
         view.addSubview(personFullNameLabel)
         view.addSubview(personAgeLabel)
         view.addSubview(personExperienceTextView)
         view.addSubview(personAvatarImageView)
         view.backgroundColor = .white
         setupConstraints()
-        
+        updateUI()
     }
     // метод обновления текстовых полей для 2 контроллера
     func updateUI() {
@@ -102,7 +104,6 @@ extension PersonViewDetailController {
         addAgeLabelConstraints()
         addExperienceTextViewConstraints()
         addAvatarImageViewConstraints()
-        updateUI()
     }
     // констрейт для ФИО
     func addFullNameLabelConstraints() {

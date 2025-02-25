@@ -15,7 +15,6 @@
 		9947C1622D4AE674009D2FC2 /* LessonsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C1612D4AE674009D2FC2 /* LessonsSwiftTests.swift */; };
 		9947C16C2D4AE674009D2FC2 /* LessonsSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */; };
 		9947C16E2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */; };
-		99C934082D6CDB16009D5F56 /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 99C934072D6CDB16009D5F56 /* image.jpeg */; };
 		99E5041B2D5A96D90010B5A4 /* PersonViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */; };
 		99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB12D4C0BEF00468148 /* PersonModel.swift */; };
 		99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB32D4C0C7E00468148 /* PersonType.swift */; };
@@ -52,7 +51,6 @@
 		9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITests.swift; sourceTree = "<group>"; };
 		9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		99C934062D6CD832009D5F56 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		99C934072D6CDB16009D5F56 /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpeg; path = ../../image.jpeg; sourceTree = "<group>"; };
 		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
 		99EEDEB12D4C0BEF00468148 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		99EEDEB32D4C0C7E00468148 /* PersonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				9947C14C2D4AE672009D2FC2 /* SceneDelegate.swift */,
 				9947C14E2D4AE672009D2FC2 /* PersonViewController.swift */,
 				9947C1532D4AE674009D2FC2 /* Assets.xcassets */,
-				99C934072D6CDB16009D5F56 /* image.jpeg */,
 				9947C1552D4AE674009D2FC2 /* LaunchScreen.storyboard */,
 				9947C1582D4AE674009D2FC2 /* Info.plist */,
 				99EEDEB12D4C0BEF00468148 /* PersonModel.swift */,
@@ -244,7 +241,6 @@
 			files = (
 				991EB3DD2D4FF770000F671C /* LaunchScreen.storyboard in Resources */,
 				9947C1542D4AE674009D2FC2 /* Assets.xcassets in Resources */,
-				99C934082D6CDB16009D5F56 /* image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
