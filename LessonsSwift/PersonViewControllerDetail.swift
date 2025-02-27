@@ -75,11 +75,18 @@ class PersonViewDetailController: UIViewController {
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
+    // метод для установки татйтла PVCD
+    func titlePVCD() {
+        guard let person = person else {
+           title = "Контроллер PVCD"
+           return
+        }
+           title = "PVCD \(person.name)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Детальное описание карточки \(person!.name)"
         view.addSubview(personFullNameLabel)
         view.addSubview(personAgeLabel)
         view.addSubview(personExperienceTextView)
@@ -87,6 +94,7 @@ class PersonViewDetailController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         updateUI()
+        titlePVCD()
     }
     // метод обновления текстовых полей для 2 контроллера
     func updateUI() {

@@ -107,15 +107,19 @@ class PersonViewController: UIViewController {
         // открываю 2 контроллер
         navigationController?.pushViewController(personViewControllerDetail, animated: true)
     }
+    // метод для установки татйтла PVC
+    func titlePVC() {
+        title = "PVC \(person.name)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Карточка описания \(person.name)"
         self.view.backgroundColor = .white
         addView()
         setupConstraints()
         displayTextLabels()
+        titlePVC()
     }
 }
 
