@@ -15,6 +15,7 @@
 		9947C1622D4AE674009D2FC2 /* LessonsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C1612D4AE674009D2FC2 /* LessonsSwiftTests.swift */; };
 		9947C16C2D4AE674009D2FC2 /* LessonsSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */; };
 		9947C16E2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */; };
+		99E5041B2D5A96D90010B5A4 /* PersonViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */; };
 		99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB12D4C0BEF00468148 /* PersonModel.swift */; };
 		99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB32D4C0C7E00468148 /* PersonType.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		9947C1672D4AE674009D2FC2 /* LessonsSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonsSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITests.swift; sourceTree = "<group>"; };
 		9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		99C934062D6CD832009D5F56 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
 		99EEDEB12D4C0BEF00468148 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		99EEDEB32D4C0C7E00468148 /* PersonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +112,7 @@
 				9947C1582D4AE674009D2FC2 /* Info.plist */,
 				99EEDEB12D4C0BEF00468148 /* PersonModel.swift */,
 				99EEDEB32D4C0C7E00468148 /* PersonType.swift */,
+				99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */,
 			);
 			path = LessonsSwift;
 			sourceTree = "<group>";
@@ -211,11 +215,12 @@
 			};
 			buildConfigurationList = 9947C1422D4AE672009D2FC2 /* Build configuration list for PBXProject "LessonsSwift" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 9947C13E2D4AE672009D2FC2;
 			productRefGroup = 9947C1482D4AE672009D2FC2 /* Products */;
@@ -264,6 +269,7 @@
 				9947C14F2D4AE672009D2FC2 /* PersonViewController.swift in Sources */,
 				99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */,
 				9947C14B2D4AE672009D2FC2 /* AppDelegate.swift in Sources */,
+				99E5041B2D5A96D90010B5A4 /* PersonViewControllerDetail.swift in Sources */,
 				9947C14D2D4AE672009D2FC2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +311,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9947C1562D4AE674009D2FC2 /* Base */,
+				99C934062D6CD832009D5F56 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -317,6 +324,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -380,6 +388,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
