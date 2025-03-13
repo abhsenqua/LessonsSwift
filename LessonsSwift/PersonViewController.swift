@@ -1,6 +1,12 @@
 import UIKit
 
 class PersonViewController: UIViewController {
+    // свитчер переключения
+    let switcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        return switcher
+    }()
     // лейбл имени
     var personNameLabel: UILabel = {
         let labelPersonName = UILabel()
@@ -112,6 +118,34 @@ class PersonViewController: UIViewController {
         title = "PVC \(person.name)"
     }
     
+    //метод переключения свитчера
+    @objc
+    func changeSwitchPerson() {
+        if switcher.isOn {
+            personNameLabel.isHidden = false
+            personLastNameLabel.isHidden = false
+            personSureNameLabel.isHidden = false
+            personAgeLabel.isHidden = false
+            personTypeLabel.isHidden = false
+            personAuthorizationLabel.isHidden = false
+            loginTextField.isHidden = false
+            passwordTextField.isHidden = false
+            buttonAuthorization.isHidden = false
+            buttonNextScreenPersonViewControllerDetail.isHidden = false
+        } else {
+            personNameLabel.isHidden = true
+            personLastNameLabel.isHidden = true
+            personSureNameLabel.isHidden = true
+            personAgeLabel.isHidden = true
+            personTypeLabel.isHidden = true
+            personAuthorizationLabel.isHidden = true
+            loginTextField.isHidden = true
+            passwordTextField.isHidden = true
+            buttonAuthorization.isHidden = true
+            buttonNextScreenPersonViewControllerDetail.isHidden = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,6 +154,9 @@ class PersonViewController: UIViewController {
         setupConstraints()
         displayTextLabels()
         titlePVC()
+        switcher.isOn = false
+        changeSwitchPerson()
+        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
     }
 }
 
@@ -136,6 +173,7 @@ extension PersonViewController {
         view.addSubview(personAgeLabel)
         view.addSubview(personTypeLabel)
         view.addSubview(buttonNextScreenPersonViewControllerDetail)
+        view.addSubview(switcher)
     }
     // метод вызова констрейтов
     func setupConstraints() {
@@ -149,6 +187,7 @@ extension PersonViewController {
         addAgeLabelPersonConstraint()
         addTypeLabelPersonConstrait()
         addButtonNextScreenPersonConstraint()
+        addSwitcherPersonConstrait()
     }
     // метод констрейта textFieldLogin
     func addLoginTextFieldConstrait() {
@@ -197,7 +236,7 @@ extension PersonViewController {
             personLastNameLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
-    // метод констрейта personAgeLabel
+    // метод констрейта personSureNameLabel
     func addSureNameLabelPersonConstrait() {
         NSLayoutConstraint.activate([
             personSureNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -221,11 +260,18 @@ extension PersonViewController {
             personTypeLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
-    // метод констрейта addButtonNextScreenConstraint
+    // метод констрейта buttonNextScreenPersonViewControllerDetail
     func addButtonNextScreenPersonConstraint() {
         NSLayoutConstraint.activate([
             buttonNextScreenPersonViewControllerDetail.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 20)
+        ])
+    }
+    // метод констрейта switcher
+    func addSwitcherPersonConstrait() {
+        NSLayoutConstraint.activate([
+            switcher.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            switcher.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
     }
 }
