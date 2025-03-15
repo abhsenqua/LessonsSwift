@@ -5,6 +5,7 @@ class PersonViewController: UIViewController {
     let switcher: UISwitch = {
         let switcher = UISwitch()
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
         return switcher
     }()
     // лейбл имени
@@ -156,7 +157,6 @@ class PersonViewController: UIViewController {
         titlePVC()
         switcher.isOn = false
         changeSwitchPerson()
-        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
     }
 }
 
