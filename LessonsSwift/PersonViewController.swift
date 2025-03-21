@@ -1,6 +1,18 @@
 import UIKit
 
 class PersonViewController: UIViewController {
+
+    // слайдер для возраста
+    let personAgeSlider: UISlider = {
+        let ageSlider = UISlider()
+        ageSlider.minimumValue = 0
+        ageSlider.maximumValue = 45
+        ageSlider.value = Float(28)
+        ageSlider.isContinuous = true
+        ageSlider.translatesAutoresizingMaskIntoConstraints = false
+        ageSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        return ageSlider
+    }()
     // свитчер переключения
     let switcher: UISwitch = {
         let switcher = UISwitch()
@@ -118,7 +130,12 @@ class PersonViewController: UIViewController {
     func titlePVC() {
         title = "PVC \(person.name)"
     }
-    
+    //метод обновления возраста
+    @objc func sliderValueChanged(_ sender: UISlider) {
+        let age = Int(sender.value)
+        personAgeLabel.text = "Возраст: \(age)"
+    }
+
     //метод переключения свитчера
     @objc
     func changeSwitchPerson() {
@@ -133,6 +150,7 @@ class PersonViewController: UIViewController {
             passwordTextField.isHidden = false
             buttonAuthorization.isHidden = false
             buttonNextScreenPersonViewControllerDetail.isHidden = false
+            personAgeSlider.isHidden = false
         } else {
             personNameLabel.isHidden = true
             personLastNameLabel.isHidden = true
@@ -144,6 +162,7 @@ class PersonViewController: UIViewController {
             passwordTextField.isHidden = true
             buttonAuthorization.isHidden = true
             buttonNextScreenPersonViewControllerDetail.isHidden = true
+            personAgeSlider.isHidden = true
         }
     }
     
@@ -174,6 +193,7 @@ extension PersonViewController {
         view.addSubview(personTypeLabel)
         view.addSubview(buttonNextScreenPersonViewControllerDetail)
         view.addSubview(switcher)
+        view.addSubview(personAgeSlider)
     }
     // метод вызова констрейтов
     func setupConstraints() {
@@ -188,6 +208,7 @@ extension PersonViewController {
         addTypeLabelPersonConstrait()
         addButtonNextScreenPersonConstraint()
         addSwitcherPersonConstrait()
+        addAgeSliderConstraint()
     }
     // метод констрейта textFieldLogin
     func addLoginTextFieldConstrait() {
@@ -272,6 +293,14 @@ extension PersonViewController {
         NSLayoutConstraint.activate([
             switcher.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             switcher.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ])
+    }
+    // метод констрейта ageSlider
+    func addAgeSliderConstraint() {
+        NSLayoutConstraint.activate([
+            personAgeSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            personAgeSlider.topAnchor.constraint(equalTo: personAgeLabel.bottomAnchor, constant: 20),
+            personAgeSlider.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
 }
