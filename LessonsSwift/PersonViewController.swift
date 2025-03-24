@@ -7,7 +7,7 @@ class PersonViewController: UIViewController {
         let ageSlider = UISlider()
         ageSlider.minimumValue = 0
         ageSlider.maximumValue = 45
-        ageSlider.value = Float(28)
+        ageSlider.value = Float(0)
         ageSlider.isContinuous = true
         ageSlider.translatesAutoresizingMaskIntoConstraints = false
         ageSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
@@ -86,13 +86,13 @@ class PersonViewController: UIViewController {
     var person = PersonModel(name: "Альберт", lastName: "Бахитов", sureName: "Ирикович", age: 28, personType: .qa)
     // создаем кнопку авторизации
     var buttonAuthorization: UIButton = {
-        // инициализация кнопки buttonAutorization
         let buttonAuth = UIButton(type: .system)
         buttonAuth.translatesAutoresizingMaskIntoConstraints = false
         buttonAuth.setTitle("Авторизация", for: .normal)
         buttonAuth.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
         return buttonAuth
     }()
+
     // кнопка для перехода на 2 контроллер
     var buttonNextScreenPersonViewControllerDetail: UIButton = {
         let buttonNextScreenPVCD = UIButton(type: .system)
@@ -299,7 +299,7 @@ extension PersonViewController {
     func addAgeSliderConstraint() {
         NSLayoutConstraint.activate([
             personAgeSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            personAgeSlider.topAnchor.constraint(equalTo: personAgeLabel.bottomAnchor, constant: 20),
+            personAgeSlider.topAnchor.constraint(equalTo: personAgeLabel.bottomAnchor, constant: 40),
             personAgeSlider.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
