@@ -3,21 +3,19 @@ import UIKit
 class PersonViewController: UIViewController {
 
     // слайдер для возраста
-    let personAgeSlider: UISlider = {
+    lazy var personAgeSlider: UISlider = {
         let ageSlider = UISlider()
         ageSlider.minimumValue = 0
         ageSlider.maximumValue = 45
-        ageSlider.value = Float(0)
+        ageSlider.value = Float(person.age)
         ageSlider.isContinuous = true
         ageSlider.translatesAutoresizingMaskIntoConstraints = false
-        ageSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         return ageSlider
     }()
     // свитчер переключения
     let switcher: UISwitch = {
         let switcher = UISwitch()
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
         return switcher
     }()
     // лейбл имени
@@ -89,7 +87,6 @@ class PersonViewController: UIViewController {
         let buttonAuth = UIButton(type: .system)
         buttonAuth.translatesAutoresizingMaskIntoConstraints = false
         buttonAuth.setTitle("Авторизация", for: .normal)
-        buttonAuth.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
         return buttonAuth
     }()
 
@@ -98,7 +95,6 @@ class PersonViewController: UIViewController {
         let buttonNextScreenPVCD = UIButton(type: .system)
         buttonNextScreenPVCD.translatesAutoresizingMaskIntoConstraints = false
         buttonNextScreenPVCD.setTitle("Открыть 2 контроллер", for: .normal)
-        buttonNextScreenPVCD.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
         return buttonNextScreenPVCD
     }()
     // метод для добавления отображения текста в лейблах на экране
@@ -176,6 +172,13 @@ class PersonViewController: UIViewController {
         titlePVC()
         switcher.isOn = false
         changeSwitchPerson()
+        personAgeSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
+        buttonNextScreenPersonViewControllerDetail.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
+        buttonAuthorization.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
+
+
+
     }
 }
 
@@ -285,7 +288,7 @@ extension PersonViewController {
     func addButtonNextScreenPersonConstraint() {
         NSLayoutConstraint.activate([
             buttonNextScreenPersonViewControllerDetail.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 20)
+            buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 25)
         ])
     }
     // метод констрейта switcher
