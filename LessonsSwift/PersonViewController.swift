@@ -130,6 +130,7 @@ class PersonViewController: UIViewController {
     @objc func sliderValueChanged(_ sender: UISlider) {
         let age = Int(sender.value)
         personAgeLabel.text = "Возраст: \(age)"
+        person.age = age
     }
 
     //метод переключения свитчера
