@@ -1,0 +1,6 @@
+
+# Игнорировать файлы и папки Xcode
+*.xcuserstate
+*.xcuserdata
+LessonsSwift.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserstate
+
