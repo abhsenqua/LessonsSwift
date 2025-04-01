@@ -4,3 +4,4 @@
 *.xcuserdata
 LessonsSwift.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserstate
 
+*.xcuserstate
