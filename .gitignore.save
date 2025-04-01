@@ -4,5 +4,3 @@
 *.xcuserdata
 LessonsSwift.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserstate
 
-*.xcuserstate
-LessonsSwift.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate

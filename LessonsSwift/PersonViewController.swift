@@ -1,6 +1,23 @@
 import UIKit
 
 class PersonViewController: UIViewController {
+
+    // слайдер для возраста
+    lazy var personAgeSlider: UISlider = {
+        let ageSlider = UISlider()
+        ageSlider.minimumValue = 0
+        ageSlider.maximumValue = 45
+        ageSlider.value = Float(person.age)
+        ageSlider.isContinuous = true
+        ageSlider.translatesAutoresizingMaskIntoConstraints = false
+        return ageSlider
+    }()
+    // свитчер переключения
+    let switcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        return switcher
+    }()
     // лейбл имени
     var personNameLabel: UILabel = {
         let labelPersonName = UILabel()
@@ -67,19 +84,17 @@ class PersonViewController: UIViewController {
     var person = PersonModel(name: "Альберт", lastName: "Бахитов", sureName: "Ирикович", age: 28, personType: .qa)
     // создаем кнопку авторизации
     var buttonAuthorization: UIButton = {
-        // инициализация кнопки buttonAutorization
         let buttonAuth = UIButton(type: .system)
         buttonAuth.translatesAutoresizingMaskIntoConstraints = false
         buttonAuth.setTitle("Авторизация", for: .normal)
-        buttonAuth.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
         return buttonAuth
     }()
+
     // кнопка для перехода на 2 контроллер
     var buttonNextScreenPersonViewControllerDetail: UIButton = {
         let buttonNextScreenPVCD = UIButton(type: .system)
         buttonNextScreenPVCD.translatesAutoresizingMaskIntoConstraints = false
         buttonNextScreenPVCD.setTitle("Открыть 2 контроллер", for: .normal)
-        buttonNextScreenPVCD.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
         return buttonNextScreenPVCD
     }()
     // метод для добавления отображения текста в лейблах на экране
@@ -111,6 +126,42 @@ class PersonViewController: UIViewController {
     func titlePVC() {
         title = "PVC \(person.name)"
     }
+    //метод обновления возраста
+    @objc func sliderValueChanged(_ sender: UISlider) {
+        let age = Int(sender.value)
+        personAgeLabel.text = "Возраст: \(age)"
+        person.age = age
+    }
+
+    //метод переключения свитчера
+    @objc
+    func changeSwitchPerson() {
+        if switcher.isOn {
+            personNameLabel.isHidden = false
+            personLastNameLabel.isHidden = false
+            personSureNameLabel.isHidden = false
+            personAgeLabel.isHidden = false
+            personTypeLabel.isHidden = false
+            personAuthorizationLabel.isHidden = false
+            loginTextField.isHidden = false
+            passwordTextField.isHidden = false
+            buttonAuthorization.isHidden = false
+            buttonNextScreenPersonViewControllerDetail.isHidden = false
+            personAgeSlider.isHidden = false
+        } else {
+            personNameLabel.isHidden = true
+            personLastNameLabel.isHidden = true
+            personSureNameLabel.isHidden = true
+            personAgeLabel.isHidden = true
+            personTypeLabel.isHidden = true
+            personAuthorizationLabel.isHidden = true
+            loginTextField.isHidden = true
+            passwordTextField.isHidden = true
+            buttonAuthorization.isHidden = true
+            buttonNextScreenPersonViewControllerDetail.isHidden = true
+            personAgeSlider.isHidden = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +171,15 @@ class PersonViewController: UIViewController {
         setupConstraints()
         displayTextLabels()
         titlePVC()
+        switcher.isOn = false
+        changeSwitchPerson()
+        personAgeSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
+        buttonNextScreenPersonViewControllerDetail.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
+        buttonAuthorization.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
+
+
+
     }
 }
 
@@ -136,6 +196,8 @@ extension PersonViewController {
         view.addSubview(personAgeLabel)
         view.addSubview(personTypeLabel)
         view.addSubview(buttonNextScreenPersonViewControllerDetail)
+        view.addSubview(switcher)
+        view.addSubview(personAgeSlider)
     }
     // метод вызова констрейтов
     func setupConstraints() {
@@ -149,6 +211,8 @@ extension PersonViewController {
         addAgeLabelPersonConstraint()
         addTypeLabelPersonConstrait()
         addButtonNextScreenPersonConstraint()
+        addSwitcherPersonConstrait()
+        addAgeSliderConstraint()
     }
     // метод констрейта textFieldLogin
     func addLoginTextFieldConstrait() {
@@ -197,7 +261,7 @@ extension PersonViewController {
             personLastNameLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
-    // метод констрейта personAgeLabel
+    // метод констрейта personSureNameLabel
     func addSureNameLabelPersonConstrait() {
         NSLayoutConstraint.activate([
             personSureNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -221,11 +285,26 @@ extension PersonViewController {
             personTypeLabel.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
-    // метод констрейта addButtonNextScreenConstraint
+    // метод констрейта buttonNextScreenPersonViewControllerDetail
     func addButtonNextScreenPersonConstraint() {
         NSLayoutConstraint.activate([
             buttonNextScreenPersonViewControllerDetail.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 20)
+            buttonNextScreenPersonViewControllerDetail.bottomAnchor.constraint(equalTo: personTypeLabel.bottomAnchor, constant: 25)
+        ])
+    }
+    // метод констрейта switcher
+    func addSwitcherPersonConstrait() {
+        NSLayoutConstraint.activate([
+            switcher.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            switcher.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ])
+    }
+    // метод констрейта ageSlider
+    func addAgeSliderConstraint() {
+        NSLayoutConstraint.activate([
+            personAgeSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            personAgeSlider.topAnchor.constraint(equalTo: personAgeLabel.bottomAnchor, constant: 40),
+            personAgeSlider.widthAnchor.constraint(equalToConstant: 250)
         ])
     }
 }
