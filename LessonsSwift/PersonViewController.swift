@@ -68,9 +68,6 @@ class PersonViewController: UIViewController {
         textFieldLog.clipsToBounds = true
         textFieldLog.layer.borderColor = UIColor.black.cgColor
         textFieldLog.layer.borderWidth = 1
-        textFieldLog.isAccessibilityElement = true
-        textFieldLog.accessibilityLabel = "Поле для ввода логина"
-        textFieldLog.accessibilityIdentifier = "loginTextField" 
         return textFieldLog
     }()
     // поле ввода пароля

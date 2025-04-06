@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		991EB3DD2D4FF770000F671C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9947C1552D4AE674009D2FC2 /* LaunchScreen.storyboard */; };
+		9934219E2DA01D8F0037D7EE /* Accessability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessability.swift */; };
+		993421A12DA2E4520037D7EE /* PVC+Accessability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993421A02DA2E4520037D7EE /* PVC+Accessability.swift */; };
+		993421A42DA2E8EE0037D7EE /* PVCD+Accessability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993421A32DA2E8EE0037D7EE /* PVCD+Accessability.swift */; };
 		9947C14B2D4AE672009D2FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14A2D4AE672009D2FC2 /* AppDelegate.swift */; };
 		9947C14D2D4AE672009D2FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14C2D4AE672009D2FC2 /* SceneDelegate.swift */; };
 		9947C14F2D4AE672009D2FC2 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14E2D4AE672009D2FC2 /* PersonViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9934219D2DA01D8F0037D7EE /* Accessability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessability.swift; sourceTree = "<group>"; };
+		993421A02DA2E4520037D7EE /* PVC+Accessability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVC+Accessability.swift"; sourceTree = "<group>"; };
+		993421A32DA2E8EE0037D7EE /* PVCD+Accessability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCD+Accessability.swift"; sourceTree = "<group>"; };
 		9947C1472D4AE672009D2FC2 /* LessonsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9947C14A2D4AE672009D2FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9947C14C2D4AE672009D2FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9934219C2DA01CE70037D7EE /* Accessability */ = {
+			isa = PBXGroup;
+			children = (
+				9934219D2DA01D8F0037D7EE /* Accessability.swift */,
+			);
+			name = Accessability;
+			sourceTree = "<group>";
+		};
+		9934219F2DA2E4300037D7EE /* PVC+Accessability */ = {
+			isa = PBXGroup;
+			children = (
+				993421A02DA2E4520037D7EE /* PVC+Accessability.swift */,
+			);
+			path = "PVC+Accessability";
+			sourceTree = "<group>";
+		};
+		993421A22DA2E8770037D7EE /* PVCD+Accessability */ = {
+			isa = PBXGroup;
+			children = (
+				993421A32DA2E8EE0037D7EE /* PVCD+Accessability.swift */,
+			);
+			name = "PVCD+Accessability";
+			sourceTree = "<group>";
+		};
 		9947C13E2D4AE672009D2FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +131,9 @@
 		9947C16A2D4AE674009D2FC2 /* LessonsSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				993421A22DA2E8770037D7EE /* PVCD+Accessability */,
+				9934219F2DA2E4300037D7EE /* PVC+Accessability */,
+				9934219C2DA01CE70037D7EE /* Accessability */,
 				9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */,
 				9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */,
 			);
@@ -221,7 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993421A12DA2E4520037D7EE /* PVC+Accessability.swift in Sources */,
+				9934219E2DA01D8F0037D7EE /* Accessability.swift in Sources */,
 				9947C16E2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift in Sources */,
+				993421A42DA2E8EE0037D7EE /* PVCD+Accessability.swift in Sources */,
 				9947C16C2D4AE674009D2FC2 /* LessonsSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
