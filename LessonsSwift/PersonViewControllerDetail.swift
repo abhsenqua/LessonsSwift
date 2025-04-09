@@ -27,6 +27,9 @@ class PersonViewDetailController: UIViewController {
         labelPersonFullName.numberOfLines = 0
         // отключаю автоматическое создание ограничений constrait
         labelPersonFullName.translatesAutoresizingMaskIntoConstraints = false
+        // назначаю Accessability personFullNameLabel
+        labelPersonFullName.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personFullNameLabel.rawValue
+
         // возвращаю созданный UILabel
         return labelPersonFullName
     }()
@@ -38,6 +41,8 @@ class PersonViewDetailController: UIViewController {
         labelPersonAge.numberOfLines = 0
         // отключаю автоматическое создание ограничений constrait
         labelPersonAge.translatesAutoresizingMaskIntoConstraints = false
+        // назначаю Accessability для personAgeLabel
+        labelPersonAge.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personAgeLabel.rawValue
         // возвращаю созданный UILabel
         return labelPersonAge
     }()
@@ -53,6 +58,9 @@ class PersonViewDetailController: UIViewController {
         textViewPersonExpirienceWork.layer.borderColor = UIColor.black.cgColor
         // устанавливаю ширину рамки
         textViewPersonExpirienceWork.layer.borderWidth = 1
+        // назначаю Accessability для personExperienceTextView
+        textViewPersonExpirienceWork.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personExperienceTextView.rawValue
+
         // возвращаю созданный UITextView
         return textViewPersonExpirienceWork
     }()
@@ -72,6 +80,8 @@ class PersonViewDetailController: UIViewController {
         imageViewPersonAvatar.clipsToBounds = true
         // принимает размеры изображения
         imageViewPersonAvatar.sizeToFit()
+        // назначаю Accessability для personAvatarImageView
+        imageViewPersonAvatar.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personAvatarImageView.rawValue
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()

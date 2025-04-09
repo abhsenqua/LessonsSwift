@@ -10,8 +10,13 @@ import XCTest
 final class LessonsSwiftUITests: XCTestCase {
 
     func testExample() throws {
+        
         let app = XCUIApplication()
-        app.launch()
-        XCTAssertEqual(app.state, .runningBackground, "Приложение не запустилось")
+        let passwordtextfieldTextField = app/*@START_MENU_TOKEN@*/.textFields["passwordTextField"]/*[[".textFields[\"Введите пароль\"]",".textFields[\"passwordTextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        passwordtextfieldTextField.tap()
+        passwordtextfieldTextField.tap()
+        app/*@START_MENU_TOKEN@*/.textFields["loginTextField"]/*[[".textFields[\"Введите логин\"]",".textFields[\"loginTextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+
     }
 }
