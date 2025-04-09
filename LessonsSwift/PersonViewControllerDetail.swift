@@ -29,7 +29,6 @@ class PersonViewDetailController: UIViewController {
         labelPersonFullName.translatesAutoresizingMaskIntoConstraints = false
         // назначаю Accessability personFullNameLabel
         labelPersonFullName.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personFullNameLabel.rawValue
-
         // возвращаю созданный UILabel
         return labelPersonFullName
     }()
