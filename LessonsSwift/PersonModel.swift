@@ -1,9 +1,3 @@
-//
-//  PersonModel.swift
-//  LessonsSwift
-//
-//  Created by Альберт Бахитов on 30.01.2025.
-//
 
 import Foundation
 

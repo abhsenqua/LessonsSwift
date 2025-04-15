@@ -10,14 +10,14 @@ class PersonViewController: UIViewController {
         ageSlider.value = Float(person.age)
         ageSlider.isContinuous = true
         ageSlider.translatesAutoresizingMaskIntoConstraints = false
-        ageSlider.accessibilityIdentifier = Accessability.PersonViewController.personAgeSlider.rawValue
+        ageSlider.accessibilityIdentifier = Accessibility.PersonViewController.personAgeSlider.rawValue
         return ageSlider
     }()
     // свитчер переключения
     let switcher: UISwitch = {
         let switcher = UISwitch()
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        switcher.accessibilityIdentifier = Accessability.PersonViewController.switcher.rawValue
+        switcher.accessibilityIdentifier = Accessibility.PersonViewController.switcher.rawValue
         return switcher
     }()
     // лейбл имени
@@ -25,7 +25,7 @@ class PersonViewController: UIViewController {
         let labelPersonName = UILabel()
         labelPersonName.numberOfLines = 0
         labelPersonName.translatesAutoresizingMaskIntoConstraints = false
-        labelPersonName.accessibilityIdentifier = Accessability.PersonViewController.personNameLabel.rawValue
+        labelPersonName.accessibilityIdentifier = Accessibility.PersonViewController.personNameLabel.rawValue
         return labelPersonName
     }()
     // лейбл фамилии
@@ -33,7 +33,7 @@ class PersonViewController: UIViewController {
         let labelPersonLastName = UILabel()
         labelPersonLastName.numberOfLines = 0
         labelPersonLastName.translatesAutoresizingMaskIntoConstraints = false
-        labelPersonLastName.accessibilityIdentifier = Accessability.PersonViewController.personLastNameLabel.rawValue
+        labelPersonLastName.accessibilityIdentifier = Accessibility.PersonViewController.personLastNameLabel.rawValue
         return labelPersonLastName
     }()
     //лейбл отчества
@@ -41,7 +41,7 @@ class PersonViewController: UIViewController {
         let labelSureNamePerson = UILabel()
         labelSureNamePerson.numberOfLines = 0
         labelSureNamePerson.translatesAutoresizingMaskIntoConstraints = false
-        labelSureNamePerson.accessibilityIdentifier = Accessability.PersonViewController.personSureNameLabel.rawValue
+        labelSureNamePerson.accessibilityIdentifier = Accessibility.PersonViewController.personSureNameLabel.rawValue
         return labelSureNamePerson
     }()
     // лейбл возраста
@@ -49,7 +49,7 @@ class PersonViewController: UIViewController {
         let labelPersonAge = UILabel()
         labelPersonAge.numberOfLines = 0
         labelPersonAge.translatesAutoresizingMaskIntoConstraints = false
-        labelPersonAge.accessibilityIdentifier = Accessability.PersonViewController.personAgeLabel.rawValue
+        labelPersonAge.accessibilityIdentifier = Accessibility.PersonViewController.personAgeLabel.rawValue
         return labelPersonAge
     }()
     // лейбл тип
@@ -57,7 +57,7 @@ class PersonViewController: UIViewController {
         let labelPersonType = UILabel()
         labelPersonType.numberOfLines = 0
         labelPersonType.translatesAutoresizingMaskIntoConstraints = false
-        labelPersonType.accessibilityIdentifier = Accessability.PersonViewController.personTypeLabel.rawValue
+        labelPersonType.accessibilityIdentifier = Accessibility.PersonViewController.personTypeLabel.rawValue
         return labelPersonType
     }()
     // лейбл авторизации
@@ -65,7 +65,7 @@ class PersonViewController: UIViewController {
         let labelPersonAutorization = UILabel()
         labelPersonAutorization.numberOfLines = 0
         labelPersonAutorization.translatesAutoresizingMaskIntoConstraints = false
-        labelPersonAutorization.accessibilityIdentifier = Accessability.PersonViewController.personAuthorizationLabel.rawValue
+        labelPersonAutorization.accessibilityIdentifier = Accessibility.PersonViewController.personAuthorizationLabel.rawValue
         return labelPersonAutorization
     }()
     // поле ввода логина
@@ -76,7 +76,7 @@ class PersonViewController: UIViewController {
         textFieldLog.clipsToBounds = true
         textFieldLog.layer.borderColor = UIColor.black.cgColor
         textFieldLog.layer.borderWidth = 1
-        textFieldLog.accessibilityIdentifier = Accessability.PersonViewController.loginTextField.rawValue
+        textFieldLog.accessibilityIdentifier = Accessibility.PersonViewController.loginTextField.rawValue
         return textFieldLog
     }()
     // поле ввода пароля
@@ -87,7 +87,7 @@ class PersonViewController: UIViewController {
         textFieldPass.clipsToBounds = true
         textFieldPass.layer.borderColor = UIColor.black.cgColor
         textFieldPass.layer.borderWidth = 1
-        textFieldPass.accessibilityIdentifier = Accessability.PersonViewController.passwordTextField.rawValue
+        textFieldPass.accessibilityIdentifier = Accessibility.PersonViewController.passwordTextField.rawValue
         return textFieldPass
     }()
     // создаю константу с моделью данных
@@ -105,9 +105,11 @@ class PersonViewController: UIViewController {
         let buttonNextScreenPVCD = UIButton(type: .system)
         buttonNextScreenPVCD.translatesAutoresizingMaskIntoConstraints = false
         buttonNextScreenPVCD.setTitle("Открыть 2 контроллер", for: .normal)
-        buttonNextScreenPVCD.accessibilityIdentifier = Accessability.PersonViewController.buttonNextScreenPersonViewControllerDetail.rawValue
+        buttonNextScreenPVCD.accessibilityIdentifier = Accessibility.PersonViewController.buttonNextScreenPersonViewControllerDetail.rawValue
         return buttonNextScreenPVCD
     }()
+    // MARK: метод проверки видимости элемента
+
     // метод для добавления отображения текста в лейблах на экране
     func displayTextLabels() {
         personNameLabel.text = "Имя: \(person.name)"
@@ -188,9 +190,6 @@ class PersonViewController: UIViewController {
         switcher.addTarget(self, action: #selector(changeSwitchPerson), for: .valueChanged)
         buttonNextScreenPersonViewControllerDetail.addTarget(self, action: #selector(openPersonViewControllerDetail), for: .touchUpInside)
         buttonAuthorization.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
-
-
-
     }
 }
 

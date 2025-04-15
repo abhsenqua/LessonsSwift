@@ -1,13 +1,7 @@
-//
-//  Accessability.swift
-//  LessonsSwiftUITests
-//
-//  Created by Альберт Бахитов on 04.04.2025.
-//
 
 import Foundation
 
-public enum Accessability {
+public enum Accessibility {
     public enum PersonViewController: String {
 
         case personAgeSlider
@@ -30,7 +24,8 @@ public enum Accessability {
         case personAgeLabel
         case personExperienceTextView
         case personAvatarImageView
+//        case personBackButton
     }
-
-
 }
+
+

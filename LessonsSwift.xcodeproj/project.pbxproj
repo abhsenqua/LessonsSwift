@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		991EB3DD2D4FF770000F671C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9947C1552D4AE674009D2FC2 /* LaunchScreen.storyboard */; };
-		9925F2F22DA703F6007FC969 /* Accessability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessability.swift */; };
 		9947C14B2D4AE672009D2FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14A2D4AE672009D2FC2 /* AppDelegate.swift */; };
 		9947C14D2D4AE672009D2FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14C2D4AE672009D2FC2 /* SceneDelegate.swift */; };
 		9947C14F2D4AE672009D2FC2 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C14E2D4AE672009D2FC2 /* PersonViewController.swift */; };
 		9947C1542D4AE674009D2FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9947C1532D4AE674009D2FC2 /* Assets.xcassets */; };
-		9947C16C2D4AE674009D2FC2 /* LessonsSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */; };
-		9947C16E2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */; };
+		9947C16C2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947C16B2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift */; };
+		9947D11A2DAD7D5D00731279 /* BaseSreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947D1192DAD7D5D00731279 /* BaseSreenProtocol.swift */; };
+		995436E62DA91768008533D7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995436E52DA91768008533D7 /* BaseTest.swift */; };
+		995436ED2DA97DB9008533D7 /* PersonViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995436E82DA979AE008533D7 /* PersonViewControllerScreen.swift */; };
+		99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99867E272DA9847200DED05E /* PersonViewControllerDetailScreen.swift */; };
 		99E5041B2D5A96D90010B5A4 /* PersonViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */; };
+		99E5EED92DAE63FC00659970 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessibility.swift */; };
+		99E5EEDA2DAE64D200659970 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessibility.swift */; };
 		99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB12D4C0BEF00468148 /* PersonModel.swift */; };
 		99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB32D4C0C7E00468148 /* PersonType.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9934219D2DA01D8F0037D7EE /* Accessability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessability.swift; sourceTree = "<group>"; };
+		9934219D2DA01D8F0037D7EE /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 		9947C1472D4AE672009D2FC2 /* LessonsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9947C14A2D4AE672009D2FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9947C14C2D4AE672009D2FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +44,11 @@
 		9947C1562D4AE674009D2FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9947C1582D4AE674009D2FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9947C1672D4AE674009D2FC2 /* LessonsSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonsSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITests.swift; sourceTree = "<group>"; };
-		9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9947C16B2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapElementFieldLoginTest.swift; sourceTree = "<group>"; };
+		9947D1192DAD7D5D00731279 /* BaseSreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSreenProtocol.swift; sourceTree = "<group>"; };
+		995436E52DA91768008533D7 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		995436E82DA979AE008533D7 /* PersonViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerScreen.swift; sourceTree = "<group>"; };
+		99867E272DA9847200DED05E /* PersonViewControllerDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetailScreen.swift; sourceTree = "<group>"; };
 		99C934062D6CD832009D5F56 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
 		99EEDEB12D4C0BEF00468148 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
@@ -69,7 +76,7 @@
 		9947C13E2D4AE672009D2FC2 = {
 			isa = PBXGroup;
 			children = (
-				9934219D2DA01D8F0037D7EE /* Accessability.swift */,
+				9934219D2DA01D8F0037D7EE /* Accessibility.swift */,
 				9947C1492D4AE672009D2FC2 /* LessonsSwift */,
 				9947C16A2D4AE674009D2FC2 /* LessonsSwiftUITests */,
 				9947C1482D4AE672009D2FC2 /* Products */,
@@ -104,10 +111,21 @@
 		9947C16A2D4AE674009D2FC2 /* LessonsSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9947C16B2D4AE674009D2FC2 /* LessonsSwiftUITests.swift */,
-				9947C16D2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift */,
+				995436E72DA9798D008533D7 /* Screens */,
+				9947C16B2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift */,
+				995436E52DA91768008533D7 /* BaseTest.swift */,
+				9947D1192DAD7D5D00731279 /* BaseSreenProtocol.swift */,
 			);
 			path = LessonsSwiftUITests;
+			sourceTree = "<group>";
+		};
+		995436E72DA9798D008533D7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				995436E82DA979AE008533D7 /* PersonViewControllerScreen.swift */,
+				99867E272DA9847200DED05E /* PersonViewControllerDetailScreen.swift */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */,
-				9925F2F22DA703F6007FC969 /* Accessability.swift in Sources */,
+				99E5EEDA2DAE64D200659970 /* Accessibility.swift in Sources */,
 				9947C14F2D4AE672009D2FC2 /* PersonViewController.swift in Sources */,
 				99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */,
 				9947C14B2D4AE672009D2FC2 /* AppDelegate.swift in Sources */,
@@ -225,8 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9947C16E2D4AE674009D2FC2 /* LessonsSwiftUITestsLaunchTests.swift in Sources */,
-				9947C16C2D4AE674009D2FC2 /* LessonsSwiftUITests.swift in Sources */,
+				995436ED2DA97DB9008533D7 /* PersonViewControllerScreen.swift in Sources */,
+				995436E62DA91768008533D7 /* BaseTest.swift in Sources */,
+				99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */,
+				9947D11A2DAD7D5D00731279 /* BaseSreenProtocol.swift in Sources */,
+				99E5EED92DAE63FC00659970 /* Accessibility.swift in Sources */,
+				9947C16C2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

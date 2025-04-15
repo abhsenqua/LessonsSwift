@@ -1,14 +1,7 @@
-//
-//  PersonViewControllerDetail.swift
-//  LessonsSwift
-//
-//  Created by Альберт Бахитов on 10.02.2025.
-//
 
 import UIKit
 
 class PersonViewDetailController: UIViewController {
-    
     // переменная для хранения информации о Person, переданной из 1 контроллера
     var person: PersonModel?
     // init для передачи данных о Person
@@ -28,7 +21,7 @@ class PersonViewDetailController: UIViewController {
         // отключаю автоматическое создание ограничений constrait
         labelPersonFullName.translatesAutoresizingMaskIntoConstraints = false
         // назначаю Accessability personFullNameLabel
-        labelPersonFullName.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personFullNameLabel.rawValue
+        labelPersonFullName.accessibilityIdentifier = Accessibility.PersonViewControllerDetail.personFullNameLabel.rawValue
         // возвращаю созданный UILabel
         return labelPersonFullName
     }()
@@ -41,7 +34,7 @@ class PersonViewDetailController: UIViewController {
         // отключаю автоматическое создание ограничений constrait
         labelPersonAge.translatesAutoresizingMaskIntoConstraints = false
         // назначаю Accessability для personAgeLabel
-        labelPersonAge.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personAgeLabel.rawValue
+        labelPersonAge.accessibilityIdentifier = Accessibility.PersonViewControllerDetail.personAgeLabel.rawValue
         // возвращаю созданный UILabel
         return labelPersonAge
     }()
@@ -58,7 +51,7 @@ class PersonViewDetailController: UIViewController {
         // устанавливаю ширину рамки
         textViewPersonExpirienceWork.layer.borderWidth = 1
         // назначаю Accessability для personExperienceTextView
-        textViewPersonExpirienceWork.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personExperienceTextView.rawValue
+        textViewPersonExpirienceWork.accessibilityIdentifier = Accessibility.PersonViewControllerDetail.personExperienceTextView.rawValue
 
         // возвращаю созданный UITextView
         return textViewPersonExpirienceWork
@@ -80,22 +73,22 @@ class PersonViewDetailController: UIViewController {
         // принимает размеры изображения
         imageViewPersonAvatar.sizeToFit()
         // назначаю Accessability для personAvatarImageView
-        imageViewPersonAvatar.accessibilityIdentifier = Accessability.PersonViewControllerDetail.personAvatarImageView.rawValue
+        imageViewPersonAvatar.accessibilityIdentifier = Accessibility.PersonViewControllerDetail.personAvatarImageView.rawValue
         // возвращаю созданный UIImageView
         return imageViewPersonAvatar
     }()
     // метод для установки татйтла PVCD
     func titlePVCD() {
         guard let person = person else {
-           title = "Контроллер PVCD"
-           return
+            title = "Контроллер PVCD"
+            return
         }
-           title = "PVCD \(person.name)"
+        title = "PVCD \(person.name)"
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.addSubview(personFullNameLabel)
         view.addSubview(personAgeLabel)
         view.addSubview(personExperienceTextView)
