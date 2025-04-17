@@ -1,10 +1,3 @@
-//
-//  BaseSreenProtocol.swift
-//  LessonsSwiftUITests
-//
-//  Created by Альберт Бахитов on 14.04.2025.
-//
-
 import XCTest
 
 protocol BaseScreen {

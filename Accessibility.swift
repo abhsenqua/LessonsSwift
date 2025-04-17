@@ -1,21 +1,20 @@
-
 import Foundation
 
 public enum Accessibility {
     public enum PersonViewController: String {
 
         case personAgeSlider
-        case switcher
+        case personSwitcher
         case personNameLabel
         case personLastNameLabel
         case personSureNameLabel
         case personAgeLabel
         case personTypeLabel
         case personAuthorizationLabel
-        case loginTextField
-        case passwordTextField
-        case buttonAuthorization
-        case buttonNextScreenPersonViewControllerDetail
+        case personLoginTextField
+        case personPasswordTextField
+        case personButtonAuthorization
+        case personButtonNextScreenPersonViewControllerDetail
     }
 
     public enum PersonViewControllerDetail: String {
@@ -24,7 +23,6 @@ public enum Accessibility {
         case personAgeLabel
         case personExperienceTextView
         case personAvatarImageView
-//        case personBackButton
     }
 }
 

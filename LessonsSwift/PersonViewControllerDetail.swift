@@ -1,4 +1,3 @@
-
 import UIKit
 
 class PersonViewDetailController: UIViewController {
@@ -80,8 +79,7 @@ class PersonViewDetailController: UIViewController {
     // метод для установки татйтла PVCD
     func titlePVCD() {
         guard let person = person else {
-            title = "Контроллер PVCD"
-            return
+            return title = "Контроллер PVCD"
         }
         title = "PVCD \(person.name)"
     }
