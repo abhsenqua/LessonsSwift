@@ -1,7 +1,6 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-
     // слайдер для возраста
     lazy var personAgeSlider: UISlider = {
         let ageSlider = UISlider()

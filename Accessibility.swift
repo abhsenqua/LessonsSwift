@@ -2,7 +2,6 @@ import Foundation
 
 public enum Accessibility {
     public enum PersonViewController: String {
-
         case personAgeSlider
         case personSwitcher
         case personNameLabel
@@ -18,7 +17,6 @@ public enum Accessibility {
     }
 
     public enum PersonViewControllerDetail: String {
-
         case personFullNameLabel
         case personAgeLabel
         case personExperienceTextView
