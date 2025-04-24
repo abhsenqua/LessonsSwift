@@ -98,7 +98,7 @@ class PersonViewController: UIViewController {
         buttonAuth.setTitle("Авторизация", for: .normal)
         return buttonAuth
     }()
-    
+
     // кнопка для перехода на 2 контроллер
     var personButtonNextScreen: UIButton = {
         let buttonNextScreenPVCD = UIButton(type: .system)
@@ -140,7 +140,7 @@ class PersonViewController: UIViewController {
         personAge.text = "Возраст: \(age)"
         person.age = age
     }
-    
+
     //метод переключения свитчера
     @objc
     func changeSwitchPerson() {
@@ -170,10 +170,9 @@ class PersonViewController: UIViewController {
             personAgeSlider.isHidden = true
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .white
         addView()
         setupConstraints()

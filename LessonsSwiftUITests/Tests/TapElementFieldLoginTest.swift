@@ -3,8 +3,11 @@ import XCTest
 final class TapElementFieldLoginTest: BaseTest {
     func testLessonSwift() throws {
         startTests()
-        func testPersonLoginTextField() {
+        step("Тап на поле 'Логин'") {
             PersonViewControllerScreen.personLogin.tap()
+            step("Появилась клавиатура для ввода в поле") {
+            }
         }
     }
 }
+

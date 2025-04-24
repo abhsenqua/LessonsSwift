@@ -6,4 +6,8 @@ class BaseTest: XCTestCase {
     func startTests() {
         app.launch()
     }
+    // метод stepов
+    func step(_ description: String, action: () -> Void) {
+        action()
+    }
 }
