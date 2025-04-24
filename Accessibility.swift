@@ -4,23 +4,23 @@ public enum Accessibility {
     public enum PersonViewController: String {
         case personAgeSlider
         case personSwitcher
-        case personNameLabel
-        case personLastNameLabel
-        case personSureNameLabel
-        case personAgeLabel
-        case personTypeLabel
-        case personAuthorizationLabel
-        case personLoginTextField
-        case personPasswordTextField
+        case personName
+        case personLastName
+        case personSureName
+        case personAge
+        case personType
+        case personAuthorization
+        case personLogin
+        case personPassword
         case personButtonAuthorization
-        case personButtonNextScreenPersonViewControllerDetail
+        case personButtonNextScreen
     }
 
     public enum PersonViewControllerDetail: String {
-        case personFullNameLabel
-        case personAgeLabel
-        case personExperienceTextView
-        case personAvatarImageView
+        case personFullName
+        case personAge
+        case personExperience
+        case personAvatar
     }
 }
 
