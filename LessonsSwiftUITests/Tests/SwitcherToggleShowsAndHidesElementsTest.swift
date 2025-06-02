@@ -1,6 +1,6 @@
 import XCTest
 
-final class TapToSwitcherTest: BaseTest {
+final class SwitcherToggleShowsAndHidesElementsTest: BaseTest {
     func testLessonSwift() {
         startTests()
         step("Переключение свитчера и отображение элементов") {
