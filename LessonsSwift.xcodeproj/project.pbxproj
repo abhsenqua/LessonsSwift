@@ -23,6 +23,7 @@
 		99E5EEDA2DAE64D200659970 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessibility.swift */; };
 		99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB12D4C0BEF00468148 /* PersonModel.swift */; };
 		99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB32D4C0C7E00468148 /* PersonType.swift */; };
+		99F9FF142DEE1725003DBA58 /* TapToSwitcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9FF132DEE1722003DBA58 /* TapToSwitcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
 		99EEDEB12D4C0BEF00468148 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		99EEDEB32D4C0C7E00468148 /* PersonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
+		99F9FF132DEE1722003DBA58 /* TapToSwitcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToSwitcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		999F5B562DB82C9400D8CE68 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				99F9FF132DEE1722003DBA58 /* TapToSwitcherTest.swift */,
 				9947C16B2D4AE674009D2FC2 /* TapElementFieldLoginTest.swift */,
 				999F5B572DB82CCB00D8CE68 /* TapButtonBackTest.swift */,
 			);
@@ -256,6 +259,7 @@
 			files = (
 				995436ED2DA97DB9008533D7 /* PersonViewControllerScreen.swift in Sources */,
 				995436E62DA91768008533D7 /* BaseTest.swift in Sources */,
+				99F9FF142DEE1725003DBA58 /* TapToSwitcherTest.swift in Sources */,
 				99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */,
 				999F5B582DB82CCB00D8CE68 /* TapButtonBackTest.swift in Sources */,
 				9947D11A2DAD7D5D00731279 /* BaseSreenProtocol.swift in Sources */,
