@@ -6,11 +6,10 @@ final class GoToTheNextScreenAndReturnBackTest: BaseTest {
         step("Переход на второй экран и возврат назад") {
             PersonViewControllerScreen.personButtonNextScreen.tap()
             step("Тап по кнопке 'Назад'") {
-                app.buttons["backButton"].tap()
+                PersonViewControllerDetailScreen.backButton.tap()
             }
             step("Кнопка 'Назад' не отображается") {
-                let backButton = app.buttons["backButton"]
-                XCTAssertFalse(backButton.exists && backButton.isHittable)
+                XCTAssertFalse(PersonViewControllerDetailScreen.backButton.exists && PersonViewControllerDetailScreen.backButton.isHittable)
             }
         }
     }

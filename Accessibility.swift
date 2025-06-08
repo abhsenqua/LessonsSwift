@@ -15,13 +15,11 @@ public enum Accessibility {
         case personButtonAuthorization
         case personButtonNextScreen
     }
-
     public enum PersonViewControllerDetail: String {
         case personFullName
         case personAge
         case personExperience
         case personAvatar
+        case backButton
     }
 }
-
-

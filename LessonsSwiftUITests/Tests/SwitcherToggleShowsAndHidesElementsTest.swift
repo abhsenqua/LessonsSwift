@@ -11,11 +11,11 @@ final class SwitcherToggleShowsAndHidesElementsTest: BaseTest {
             }
             step("Свитчер выключен") {
                 PersonViewControllerScreen.personSwitcher.tap()
-            }
-            step("Свитчер переключен, элементы не отображаются") {
-                XCTAssertEqual(PersonViewControllerScreen.personSwitcher.value as? String, "0", "Свитчер выключен")
-                XCTAssertFalse(PersonViewControllerScreen.personName.isHittable)
-                XCTAssertFalse(PersonViewControllerScreen.personLastName.isHittable)
+                step("Свитчер переключен, элементы не отображаются") {
+                    XCTAssertEqual(PersonViewControllerScreen.personSwitcher.value as? String, "0", "Свитчер выключен")
+                    XCTAssertFalse(PersonViewControllerScreen.personName.isHittable)
+                    XCTAssertFalse(PersonViewControllerScreen.personLastName.isHittable)
+                }
             }
         }
     }
