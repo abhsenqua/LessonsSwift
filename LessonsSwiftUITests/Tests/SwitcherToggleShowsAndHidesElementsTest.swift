@@ -6,8 +6,8 @@ final class SwitcherToggleShowsAndHidesElementsTest: BaseTest {
         step("Переключение свитчера и отображение элементов") {
             step("Элементы отображаются, свитчер включен") {
                 XCTAssertEqual(PersonViewControllerScreen.personSwitcher.value as? String, "1", "Свитчер включен")
-                XCTAssertFalse(PersonViewControllerScreen.personName.exists == false)
-                XCTAssertFalse(PersonViewControllerScreen.personLastName.exists == false)
+                XCTAssertTrue(PersonViewControllerScreen.personName.exists)
+                XCTAssertTrue(PersonViewControllerScreen.personLastName.exists)
             }
             step("Свитчер выключен") {
                 PersonViewControllerScreen.personSwitcher.tap()
