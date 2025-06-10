@@ -6,4 +6,5 @@ struct PersonViewControllerDetailScreen: BaseScreen {
     static let personExperience = app.textViews[Accessibility.PersonViewControllerDetail.personExperience.rawValue]
     static let personAvatar = app.images[Accessibility.PersonViewControllerDetail.personAvatar.rawValue]
     static let backButton = app.buttons[Accessibility.PersonViewControllerDetail.backButton.rawValue]
+    static let title = app.staticTexts[Accessibility.PersonViewControllerDetail.title.rawValue]
 }

@@ -17,6 +17,8 @@
 		995436E62DA91768008533D7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995436E52DA91768008533D7 /* BaseTest.swift */; };
 		995436ED2DA97DB9008533D7 /* PersonViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995436E82DA979AE008533D7 /* PersonViewControllerScreen.swift */; };
 		99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99867E272DA9847200DED05E /* PersonViewControllerDetailScreen.swift */; };
+		999D26882DF8D5D600D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D26872DF8D5D500D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift */; };
+		999D268A2DF8DB2400D8E863 /* ChangePositionToSliderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D26892DF8DAF600D8E863 /* ChangePositionToSliderTest.swift */; };
 		999F5B582DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999F5B572DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift */; };
 		99E5041B2D5A96D90010B5A4 /* PersonViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */; };
 		99E5EED92DAE63FC00659970 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessibility.swift */; };
@@ -51,6 +53,8 @@
 		995436E52DA91768008533D7 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		995436E82DA979AE008533D7 /* PersonViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerScreen.swift; sourceTree = "<group>"; };
 		99867E272DA9847200DED05E /* PersonViewControllerDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetailScreen.swift; sourceTree = "<group>"; };
+		999D26872DF8D5D500D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTestFieldTapDisplayKeyboardTest.swift; sourceTree = "<group>"; };
+		999D26892DF8DAF600D8E863 /* ChangePositionToSliderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePositionToSliderTest.swift; sourceTree = "<group>"; };
 		999F5B572DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToTheNextScreenAndReturnBackTest.swift; sourceTree = "<group>"; };
 		99C934062D6CD832009D5F56 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		999F5B562DB82C9400D8CE68 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				999D26892DF8DAF600D8E863 /* ChangePositionToSliderTest.swift */,
+				999D26872DF8D5D500D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift */,
 				99F9FF132DEE1722003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift */,
 				9947C16B2D4AE674009D2FC2 /* LoginTextFieldTapDisplaysKeyboardTest.swift */,
 				999F5B572DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift */,
@@ -257,9 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999D268A2DF8DB2400D8E863 /* ChangePositionToSliderTest.swift in Sources */,
 				995436ED2DA97DB9008533D7 /* PersonViewControllerScreen.swift in Sources */,
 				995436E62DA91768008533D7 /* BaseTest.swift in Sources */,
 				99F9FF142DEE1725003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift in Sources */,
+				999D26882DF8D5D600D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift in Sources */,
 				99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */,
 				999F5B582DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift in Sources */,
 				9947D11A2DAD7D5D00731279 /* BaseSreenProtocol.swift in Sources */,

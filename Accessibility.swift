@@ -21,5 +21,6 @@ public enum Accessibility {
         case personExperience
         case personAvatar
         case backButton
+        case title
     }
 }
