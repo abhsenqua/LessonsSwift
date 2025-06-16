@@ -9,7 +9,7 @@ final class GoToTheNextScreenAndReturnBackTest: BaseTest {
                 PersonViewControllerDetailScreen.backButton.tap()
             }
             step("Кнопка 'Назад' не отображается") {
-                XCTAssertFalse(PersonViewControllerDetailScreen.backButton.exists && PersonViewControllerDetailScreen.backButton.isHittable)
+                XCTAssertFalse(PersonViewControllerDetailScreen.backButton.exists)
             }
         }
     }

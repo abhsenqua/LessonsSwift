@@ -5,7 +5,7 @@ final class PasswordTestFieldTapDisplayKeyboardTest: BaseTest {
         startTests()
         step("Тап на поле 'Пароль'") {
             PersonViewControllerScreen.personPassword.tap()
-            step("Появилась клавиатура для ввода в поле") {
+            step("Открыт экран ввода для поля 'Пароль'") {
                 XCTAssertTrue(app.firstMatch.keyboards.element.waitForExistence(timeout: 2), "Клавиатура не появилась")
             }
         }
