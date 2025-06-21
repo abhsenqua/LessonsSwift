@@ -25,6 +25,7 @@
 		99E5EEDA2DAE64D200659970 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9934219D2DA01D8F0037D7EE /* Accessibility.swift */; };
 		99EEDEB22D4C0BEF00468148 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB12D4C0BEF00468148 /* PersonModel.swift */; };
 		99EEDEB42D4C0C7E00468148 /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EEDEB32D4C0C7E00468148 /* PersonType.swift */; };
+		99F31A262E070F11007F5F42 /* AutorizationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F31A252E070EFB007F5F42 /* AutorizationTest.swift */; };
 		99F9FF142DEE1725003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9FF132DEE1722003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		99E5041A2D5A96D90010B5A4 /* PersonViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewControllerDetail.swift; sourceTree = "<group>"; };
 		99EEDEB12D4C0BEF00468148 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		99EEDEB32D4C0C7E00468148 /* PersonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
+		99F31A252E070EFB007F5F42 /* AutorizationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationTest.swift; sourceTree = "<group>"; };
 		99F9FF132DEE1722003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherToggleShowsAndHidesElementsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 		999F5B562DB82C9400D8CE68 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				99F31A252E070EFB007F5F42 /* AutorizationTest.swift */,
 				999D26892DF8DAF600D8E863 /* ChangePositionToSliderTest.swift */,
 				999D26872DF8D5D500D8E863 /* PasswordTestFieldTapDisplayKeyboardTest.swift */,
 				99F9FF132DEE1722003DBA58 /* SwitcherToggleShowsAndHidesElementsTest.swift */,
@@ -271,6 +274,7 @@
 				99867E282DA9847200DED05E /* PersonViewControllerDetailScreen.swift in Sources */,
 				999F5B582DB82CCB00D8CE68 /* GoToTheNextScreenAndReturnBackTest.swift in Sources */,
 				9947D11A2DAD7D5D00731279 /* BaseSreenProtocol.swift in Sources */,
+				99F31A262E070F11007F5F42 /* AutorizationTest.swift in Sources */,
 				99E5EED92DAE63FC00659970 /* Accessibility.swift in Sources */,
 				9947C16C2D4AE674009D2FC2 /* LoginTextFieldTapDisplaysKeyboardTest.swift in Sources */,
 			);

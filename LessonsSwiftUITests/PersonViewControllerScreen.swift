@@ -10,6 +10,6 @@ struct PersonViewControllerScreen: BaseScreen {
     static let personAuthorization = app.staticTexts[Accessibility.PersonViewController.personAuthorization.rawValue]
     static let personLogin = app.textFields[Accessibility.PersonViewController.personLogin.rawValue]
     static let personPassword = app.textFields[Accessibility.PersonViewController.personPassword.rawValue]
-    static let personButtonAuthorization = app.buttons[Accessibility.PersonViewController.personButtonAuthorization.rawValue]
+    static let personButtonAuthorization = app.buttons["Авторизация"]
     static let personButtonNextScreen = app.buttons[Accessibility.PersonViewController.personButtonNextScreen.rawValue]
 }
